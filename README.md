@@ -1,4 +1,0 @@
-misc-documents
-==============
-
-Misc. documents.

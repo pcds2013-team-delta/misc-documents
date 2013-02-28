@@ -1,0 +1,77 @@
+** Brief description of    **
+** Mercurial (Hg) Workflow **
+
+* Introduction *
+This brief report is written with Git in mind, when assessing the workflow of
+mercurial, as most of the group is proficient in the Git terminology.
+
+An overview of the most common Git commands and their corresponding Mercurial
+counterparts can be found at
+	http://www.wikivs.com/wiki/Git_vs_Mercurial
+
+* On Mercurial *
+While the Mercurial tool is less flexible than Git overall, subscribing to a
+more monolithic approach when compared to Git, Mercurial follows the same
+principles as other distributed version control systems.
+
+It is important to note that the branches in Mercurial are created automatically
+by Mercurial. These branches occur when a parent has multiple children and must
+be merged manually. It is possible to create these named branches manually,
+adding the branch name to the changesets metadata. Changing to a branch, will
+grant the tip (HEAD) of that branch, by setting the latest changeset.
+
+In order to obtain
+Git-like branches for Mercurial, using either bookmarks or cloning is the way to
+go. Bookmarks are not necessarily pushed/pulled and require some additional work
+there, but otherwise acts just like the Git branches. Cloning works as expected,
+is safer than most other methods, but has some more overhead.
+
+When considering multiple distrubuted version control schemes in an attempt to
+find a generic solution, it is important to decide on a common vocabulary, as
+well as scheme specific dictionaries, in order to facilitate cross-platform
+communication.
+
+Unless otherwise specified, Mercurial pushes all branches, whereas Git pushes
+only the current branch.
+
+* Workflow *
+- Terminology -
+	For the remainder of this text, we will use the word 'branching' as used by
+	the Git community.
+
+The most common practices, sometimes refered to as 'Best Practices', for
+Mercurial are very familiar to the ones from git.
+
+Always use branching when implementing a feature or fixing a bug, no matter the
+percieved complexity of the problem. However, developers will probably push
+their local feature branches to a local development branch which in turn is
+pushed to a remote server, instead of pushing each feature to a remote machine
+individually.
+
+While developers can pull changesets directly from each other, it will
+be more common to pull directly from a common truth repository (or, in some
+cases pushing/pulling to/from the same master). Pulling from each other is a
+source of errors, as you are not guaranteed to get working code if done
+improperly.
+
+In short, it works as with git, albeit with other commands: You branch whenever
+you need change, you merge whenever that change is done and tested, and you
+push whenever you have met some determined requirement (a single task, a single
+feature, something...).
+
+* Verdict *
+The different methods for branching in mercurial needs to be handled correctly
+by our plugin, but beyond that there should be little problem.
+
+Branching through cloning is a trivial case, as the clone will be a copy of the
+original and thus work in the same way. Jenkins should not care from where an
+update appears.
+
+For the other branches we need to recognize both bookmarks, anonymous branching
+and mercurial branches when pushed to Jenkins. Especially the mercurial branches
+(of which all are pushed) is an interesting case, as we should only merge some
+of them.
+
+It is possible to enforce a workflow, where users merge to a local dev-branch,
+just pushing this branch to Jenkins. This method, however, relies on the users,
+which is never an optimal solution.

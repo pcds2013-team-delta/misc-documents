@@ -1,0 +1,161 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[pdftex]{color,graphicx}
+%\usepackage{colortbl}
+%\usepackage{pdfpages}
+\usepackage{fancyhdr}
+%\usepackage{amsmath} % math environment
+%\usepackage{listings}
+\usepackage{xcolor, colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{setspace} % text spacing options
+\usepackage{textcomp} % text symbols
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{rotating}
+
+%temp
+\usepackage{lipsum}
+
+\pagestyle{fancy}
+
+%Define commands
+\newcommand{\systemname}{Jenkins validated merging}
+\newcommand{\groupname}{Team $\Delta$}
+\newcommand{\groupmembers}{
+	Andreas Frisch \{andreas.frisch@gmail.com\}, \\
+	Esben Skaarup \{esben.skaarup@gmail.com\}, \\
+	Alexander W. Uldall \{morpmex@gmail.com\} \\
+	Ronni Elken Lindsgaard \{ronni.lindsgaard@gmail.com\}, \\
+	~
+}
+
+%Define colors
+\definecolor{Gray}{gray}{0.8}
+\definecolor{DarkGray}{gray}{0.4}
+
+\lhead{Project Course: Development Studio}
+\chead{}
+\rhead{\systemname}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+%Start section numbering from 0
+\setcounter{section}{-1}
+
+\begin{document}
+\begin{titlepage}
+	% Title
+	\begin{center}
+		\vspace*{4cm}
+		\rule{\linewidth}{0.5mm}\\[0.4cm]
+		{\huge \bfseries \systemname}
+		\rule{\linewidth}{0.5mm}
+	\end{center}
+	\begin{flushleft}
+		{
+			\Large Project Course: Development Studio \\[0.1cm]
+			{\it Assignment 2}
+		}
+	\end{flushleft}
+	\vspace*{4cm}
+	
+	% Authors
+	\begin{flushleft}
+		{\Large \groupname :} \\[0.1cm]
+		{\Large \groupmembers} \\[0.3cm]
+		{\Large \today}
+	\end{flushleft}
+\end{titlepage}
+\newpage
+\onehalfspacing
+\setcounter{tocdepth}{2}
+%\tableofcontents
+%newpage
+
+\section{This hand-in}
+This assignment is written as part of the course {\it Project Course: Development Studio} at DIKU.
+
+This assignment concerns itself with our results from the first sprint.
+Furthermore we will briefly discuss the lessons learned and how they affect our
+upcoming sprint.
+
+Our customer, Praqma, wants a plug-in for the continuous delivery facilitator
+Jenkins, which allows Jenkins to rollback broken commits, thus maintaining an
+unpolluted company truth repository.
+
+Our code can be found at https://github.com/pcds2013-team-delta/pretest-commit-plugin
+
+\section{Sprint results}
+Being unfamiliar with both Jenkins, Maven, continuous delivery and to some extend
+Mercurial, we spent a lot of the first sprint setting up environments and
+familiarizing ourselves with the various tools. We did this in agreement with
+the customer, whose only coding demands were that we created a footprint in
+Jenkins and set up a work pipeline.
+
+However, having research tasks without any visible deliverable is a recipe for
+disaster, which Praqma already knows. They asked us to describe tangible
+deliverables for all tasks, research as well as implementation.
+
+As such the sprint resulted in both documentation (which can be seen on our Wiki
+page
+\footnote{https://github.com/pcds2013-team-delta/pretest-commit-plugin/wiki/\_pages})
+and code (which can be found in our github
+repository\footnote{https://github.com/pcds2013-team-delta/pretest-commit-plugin}).
+
+\section{Sprint review and discussion}
+We did not get around to do all tasks in our sprint backlog. However, we divided
+the tasks into categories {\it must have}, {\it should have} and
+{\it could have} before the sprint began. Our aim was to complete all
+{\it must haves}, hopefully get around to resolve all {\it should
+haves}, but only consider {\it could haves} if time permitted.
+
+This is a bit different from a standard SCRUM approach, but as we are working on
+new tools using new methods (story points and SCRUM) we decided to work in a bit
+of slack. In case we grossly underestimated our own ability, we had the {\it
+could haves} to do and in case of gross overestimation of our ability our
+{\it must haves} only cover around two thirds of the overall sprint
+capacity. This way is inspired by Praqma's pragmatic SCRUM approach and fits nicely into
+our lines of thought, why we decided to continue doing this.
+
+We presented our results to the customer, demonstrating footprints and
+documentation. The customer agreed that the time spent researching our tools and methods was
+time well spent and was generally positive regarding our progress.
+
+Based on the completed amount of story points in contrast to our estimated
+velocity during the previous sprint, we calculated our efficiency, which we used
+to calculate our coming sprint capacity. This value will change from sprint to
+sprint. However, we forgot to measure our story point precision (how many story
+points we spend per estimated story point). This last bit is important to
+properly estimate sprint capacity in the future and will be included from now on
+out.
+
+\subsection{Story point estimation}
+For our first sprint we estimated our sprint capacity to $50$. We completed $35$
+story points worth of tasks, yielding an efficiency of
+$$35/50 = 0.7$$
+
+For this second sprint, which consists of more weeks than the first sprint, we
+estimated a $83$ story points capacity. This takes into consideration that one
+of the weeks is a holiday and part of the group has exams during this sprint.
+
+Granted our current efficiency we have
+$$83*0.7 = 58$$
+story points worth of actual capacity for the coming sprint.
+
+\section{Upcoming Sprint}
+In collaboration with the customer, we determined the goal and tasks for the
+next sprint and generated the sprint backlog. This sprint has a much more
+intensified focus on actual implementation and possible visual presentation of
+functionality than the first. As such we are going to write more tests this
+sprint, why we now introduce the {\textit tester} role defined in the last
+report.
+
+This role was absent from the currently finished sprint, as we had little code
+to possibly apply any tests to.
+
+\end{document}

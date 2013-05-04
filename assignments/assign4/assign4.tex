@@ -175,8 +175,66 @@ of our entities and lastly the insights gained from having our code inspected
 by another group.
 
 \subsection{Architectural description}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=8cm]{../graphs/sequence_diagram.jpg}
+	\caption{Sequence diagram describing the general inter-system communication
+	in the most common scenario. As seen there is no user interaction from the
+	moment when the user pushes his updates.}
+	\label{fig:dia_sequence}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=8cm]{../graphs/architecture_01.jpg}
+	\caption{Architectural diagram describing all major components, their
+	internal relationships and the communication protocols they use. When no
+	protocol is mentioned, this is determined by the desired SCM.}
+	\label{fig:dia_architecture}
+\end{figure}
+
+Based on Christensen et al. 2011, this section will describe our current
+system and the underlying architecture. This will not be a restatement of the
+problem we are trying to solve; for that, please refer to the previous assignments.
+Instead of using the three viewpoints presented in the article, however, we did
+the following.
+
+Figures \ref{fig:dia_sequence} and \ref{fig:dia_architecture} give an overview of
+the various parts involved in the system as well as their connectors. These
+diagrams yields a similar overview as the \texttt{Module} and
+\texttt{Component \& Connector} viewpoints combined, but this rendition made more
+sense when we tried to apply the theory to our own project. The \texttt{Allocation}
+viewpoint is not as relevant for our product, as it is based on existing technology
+and thus shares requirements with those. The parts of the \texttt{Allocation} viewpoint
+not implicitly covered by host technologies are covered by the aforementioned diagrams.
+
+Figure \ref{fig:dia_sequence} shows communication between different elements of
+the system. These elements are individual entities either separated in code or
+physically on different machines. While such a scenario diagram often features
+specific function names as arrow labels, we decided against this to clearly
+indicate how most operations between elements are part of the host technologies
+and not something we have written. We also added the external user, as the figure
+then also serves to illustrate the intended use of the system.
+
+Figure \ref{fig:dia_architecture} shows the different physically separated modules,
+their constituent parts and the protocols through which we handle inter-module
+communication. Some of the protocols are undefined as the parts communicating
+across this link are both internal parts of Jenkins, why we do not care about the
+specific protocol, as Jenkins handles this for us. 
 
 \subsection{Entity documentation}
+As the entities of a system usually comprises models of physical objects or actors,
+this notion has little relevance for our case. Unlike a web-shop having both
+customers, items for sale, suppliers, wish lists and more to model as well as
+users and suppliers as external actors, our product has no direct interaction from
+users and no objects to model. Documenting our entities thus devolves into the
+trivial task of doing nothing.
+
+%Let us instead regard entities as separate crucial parts of the system, in this
+%case bits of code, giving us the following 
+
+%Therefore, in an attempt to do something meaningful for this exercise, let us define
+%an entity as a ``crucial part of the system'', thereby giving us the following
+%``entities'' to document:
 
 \subsection{Code inspection}
 \label{sec:inspection}

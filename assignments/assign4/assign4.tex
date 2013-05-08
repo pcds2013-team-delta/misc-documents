@@ -197,7 +197,7 @@ by another group.
 \subsection{Architectural description}
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=\textwidth]{../graphs/sequence_diagram.jpg}
+	\includegraphics[width=\textwidth/4*3]{../graphs/sequence_diagram.jpg}
 	\caption{Sequence diagram describing the general inter-system communication
 	in the most common scenario. As seen there is no user interaction from the
 	moment when the user pushes his updates.}
@@ -205,7 +205,7 @@ by another group.
 \end{figure}
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=8cm]{../graphs/architecture_01.jpg}
+	\includegraphics[width=\textwidth/4*3]{../graphs/architecture_01.jpg}
 	\caption{Architectural diagram describing all major components, their
 	internal relationships and the communication protocols they use. When no
 	protocol is mentioned, this is determined by the desired SCM.}
@@ -251,7 +251,7 @@ trivial task of doing nothing.
 
 If we instead regard entities as separate pieces of code, our entities becomes our
 job handler before and after a build as well as our queue. Those are all
-documented through javadocs style comments, why it seems silly to repeat that information
+documented through Javadoc-style comments, why it seems silly to repeat that information
 here.
 
 \subsection{Code inspection}
@@ -277,7 +277,7 @@ where a
 clearer separation of concerns regarding SCM functionality would increase both
 readability and maintainability.
 
-Secondly the inspectors mentioned a lack of JavaDocs here and there, which of
+Secondly the inspectors mentioned a lack of Javadocs here and there, which of
 course needs ammending.
 
 Lastly, due to an error on our part, the {\tt CommitQueue.java} was unused in
@@ -296,7 +296,7 @@ brief discussions on the lessons learned from the review, see section
 			\hline
 			\textbf{File}&\textbf{Anomalies} \\
 			\hline
-			<General> & JavaDocs are missing or incomplete. \\
+			<General> & Javadocs are missing or incomplete. \\
 			\hline
 			\texttt{CommitQueue.java} &
 				The queue is currently unused and performs no task.\\
@@ -334,12 +334,12 @@ However short, the customer was a bit dissatisfied with two main issues:
 		This includes asking for help in online fora regarding elusive answers.
 		This especially entails to the problems we had passing around arguments
 		between Hg-hook and Jenkins.
-	\item We have to, have to, have to establish a continuous delivery pipeline.
-		This is hardly surprising as continuous delivery is the heart of praqma,
+	\item We have to establish a continuous delivery pipeline.
+		This is hardly surprising as continuous delivery is the heart of Praqma,
 		but this task must be completed during the next sprint.
 \end{itemize}
 
-Besides these two items, no important things were discussed.
+Besides these, the customer had no further critical topics to discuss.
 
 \subsection{Goal: Community Release}
 At the end of the coming sprint we must have released our first version into the
@@ -353,5 +353,5 @@ planned workload may seem excessive, but based on our recalculated velocity and
 available time, it should be doable. The previous sprints have suffered from the
 fact that our tasks were hard to close -- most of them could be improved ad nauseam --
 which is not a problem this time around. The only open ended tasks for this sprint
-related to testing.
+are related to testing.
 \end{document}

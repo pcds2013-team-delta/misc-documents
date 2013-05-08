@@ -2,7 +2,7 @@
 
 %\usepackage[latin1]{inputenc}
 %\usepackage[utf-8]{inputenc}
-%\usepackage[danish]{babel}
+\usepackage[danish]{babel}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -20,7 +20,7 @@
 \usepackage{setspace}
 
 %\usepackage[T1]{fontenc}
-\usepackage[sc]{mathpazo}
+%\usepackage[sc]{mathpazo}
 
 \defaultfontfeatures{Mapping=tex-text, Scale=MatchLowercase}
 \setmainfont{Gentium}
@@ -268,15 +268,19 @@ project is a plug-in which imposes some restrictions in this regard.
 of the feedback we got revolved around coding style and convention, perhaps
 partly due to the fact that our code is highly integrated with Jenkins, making
 it hard to cleanly separate functionalities. However, there were some excellent
-comments still, especially regarding our \texttt{PretestCommitPreCheckout.java},
-\texttt{PretestCommitPostCheckout.java} and \texttt{HgUtils.java}, where a
+comments still, especially regarding our
+{\it PretestCommitPreCheckout.java},
+{\it PretestCommitPostCheckout.java}
+and
+{\it HgUtils.java},
+where a
 clearer separation of concerns regarding SCM functionality would increase both
 readability and maintainability.
 
 Secondly the inspectors mentioned a lack of JavaDocs here and there, which of
 course needs ammending.
 
-Lastly, due to an error on our part, the \texttt{CommitQueue.java} was unused in
+Lastly, due to an error on our part, the {\tt CommitQueue.java} was unused in
 the code we handed out for expection. An error that had been corrected before
 the inspection meeting.
 

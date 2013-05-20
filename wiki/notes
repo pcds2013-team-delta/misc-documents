@@ -1,0 +1,68 @@
+## Jenkins -- Pretested Integration Plugin
+## Wiki
+
+# Philosophy
+# - the what and the why
+
+This plugin lets Jenkin manage your company truth 'upstream' repository --
+keeping it in a clean state by only pushing changesets which build
+successfully. Builds -- and thus updates -- are triggered when developers
+push to a specific designated repository.
+
+
+# Description
+# - how it works
+
+The system defined in this plugin depends on three parts: A company truth
+'upstream' repository where developers can pull the latest stable version; a
+'downstream' repository to which developers push their changes and from
+where Jenkins extract changesets in order to build them and possibly commit
+them to company truth; and thirdly -- in the case of distributed SCMs -- the
+local repositories where developers work.
+
+
+
+# Constraints
+# - what works, what does not
+
+The current version is a minimal working example and -- as it is under
+development -- there are some constraints to the plugin as it is:
+
+- Only supports mercurial: while the final plugin should support the most
+common SCMs -- or at least allow for easy integration -- currently only
+Mercurial is supported.
+
+- 'downstream' names: the names for branches to push to in order to trigger
+a build is hard-coded for now. This of course 
+
+
+# Installation Guide
+# - how to get everything up and running
+
+In order to get started using Pretested Integration, you need the three
+repositories described above: The 'upstream' and local repositories
+probably exist already. Otherwise set up a remote Hg repository and clone
+it unto the clients. For both existing and new repositories it is worth
+considering disallowing pushes directly to the 'upstream' repository.
+
+The 'downstream' repository is set up by this plugin upon configuration.
+At this point client repositories should change their default configuration
+for push-requests to point to this 'downstream' repository.
+
+In Jenkins each job can be configured to use Pretested Integration from
+the job configuration page. Once selected, Jenkins will start building the
+job in question every time a developer pushes a changeset to the defined
+branch.
+
+It is important
+
+
+# Current problems
+# - list of outstanding problems
+
+- Sunshine scenario: troubles during merge/build leaves the workspace in
+a non-working state. This must be fixed manually for the time being. As
+such we only consider sunshine scenarios.
+
+- Lack of generalization: we only handle Hg SCM right now. 
+

@@ -1,12 +1,12 @@
 DOCUMENT=assign6
 OUTFILE=pcds.delta.$(DOCUMENT).pdf
 AUXDIR=aux
-PLOTDATA=sprint6.dat
+PLOTDATA=sprint5.dat
 
 all:
 	gnuplot -e "datafile='$(AUXDIR)/$(PLOTDATA)'" $(AUXDIR)/burnup.p
 	mv burnup.png img/
-	xelatex --output-directory $(AUXDIR)/ presentation.tex
+	#xelatex --output-directory $(AUXDIR)/ presentation.tex
 	xelatex $(DOCUMENT).tex
 	xelatex $(DOCUMENT).tex
 	mv $(DOCUMENT).pdf $(OUTFILE)

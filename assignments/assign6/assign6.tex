@@ -1,3 +1,4 @@
+%Preamble
 \documentclass[a4paper,11pt]{article}
 
 %\usepackage[latin1]{inputenc}
@@ -71,6 +72,7 @@
 \setcounter{section}{-1}
 
 \begin{document}
+%Frontpage
 \begin{titlepage}
 	% Title
 	\begin{center}
@@ -102,7 +104,8 @@
 \newpage
 
 \section{Introduction}
-This paper describes our sixth and final sprint of the course {\it Project
+This paper describes our sixth and final sprint of our project development in
+the course {\it Project
 Course: Development Studio} at DIKU. During the course of this project we have
 developed a plugin for Jenkins allowing for pretested integration of commits.
 Our customer, Praqma, regards this project partly as proof of concept, as we are
@@ -110,7 +113,7 @@ trying to generalize an existing but too specific plugin.
 
 Pretested integration lets Jenkins roll back commits which break the build for
 any reason, keeping the master version in a pristine state. To validate this
-project we have provided an implementation of pretested integration for the
+project we are providing an implementation of pretested integration for the
 Mercurial SCM.
 
 We have developed our plugin in Java, the native language of Jenkins, and used
@@ -135,37 +138,77 @@ For once our own sprint goals for the project was consistent with the learning
 goals put forward in the course; completion of the project or as much as
 possible. 
 
-\begin{quote}
-	\emph{TODO:what have we done this sprint?}
-\end{quote}
+However, the task of finishing the project turned out to be more
+complex than we had hoped, as the customer wanted us to apply a branchy approach
+instead of the repository-based one we had applied until then. Therefore we
+introduced a virtual sledgehammer to our code in order to put it back together
+in a more clearly separated and branchy way.
 
+At the time of writing we are still trying to fit the last pieces together in
+order to reestablish our round-trip.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=12cm]{img/burnup.png}
-	\caption{TODO: A burnup graph of our sprint 6.}
+	\caption{A burnup graph of our final sprint.}
 	\label{fig:burnup}
 \end{figure}
 
+Our burnup graph for this sprint can be seen in figure \ref{fig:burnup}. While
+it appears as if we are hopelessly behind schedule, please note the following
+constraints. Firstly the graph is offset by half a week due to us not meeting up
+before then. Secondly this sprint is not done at the time of writing, why we
+have some time to complete some more tasks.
+
+Even though we expect to get our round-trip working with the branchy approach
+before delivery, as of now, we cannot claim to have reached the goals for this
+sprint.
+
 \subsection{Sprint experience}
 \label{sec:sprint_experience}
-\begin{quote}
-	\emph{TODO:what have we learned this sprint?}
-\end{quote}
+As this was the last sprint of the course -- and thus of the project -- we
+wanted to get as many outstanding tasks completed as possible. This resulted in
+a very busy sprint log containing almost solely must have tasks. In hindsight
+this was a bad move, as we ended up trying to close tasks before they were
+actually completed -- a reversal of our previous inability to close completed
+tasks -- just to get all tasks done. Our burnup graph (figure \ref{fig:burnup})
+partly indicate this, as we have not closed as many tasks as we should.
+
+Since this is a learning project with a parallel development and learning
+track, we did not have the option of simply extending the project. Had this been
+a pure development project, we would most likely postpone the release date.
+
+We firmly believe that we could not have handled this sprint much differently
+from what we did, as the reason for why it got so crowded originates from the
+previous sprints, not this one. Taking apart our code was a costly process which
+could have been avoided if we had gone for a branchy approach from the very
+beginning. An early emphasis on continuous communication with the customer could
+have helped this problem. This continuous communication is more in line with
+proper SCRUM as well.
+
+Except for the above mentioned issue, this sprint was executed much like our
+previous ones. However, the internal roles of the group has become more and more
+accentuated over the course of the project -- especially in this sprint and the
+last. While we
+initially decided not to use and delegate roles for this project, natural roles
+have slowly evolved anyway. This is natural for any project involving multiple
+people, as people are not all alike, but we did not initially believe it would
+be as visible for smaller projects.
 
 \subsection{Sprint learning goal}
 \label{sec:sprint_learning_goals}
 
 For this sprint the learning goals entails completing our product and
 demonstrating the functionality during class. The slides used for presenting our
-product can be found in appendix \ref{sec:presentation_slides}. For a discussion
-on our resulting product, please refer to \ref{sec:project_completion}.
+product can be found in appendix \ref{sec:presentation_slides}.
 
-\subsection{Project completion}
-\label{sec:project_completion}
-\begin{quote}
-	\emph{TODO:what have we done?}
-\end{quote}
+As mentioned in section \ref{sec:sprint_goals} we are currently still working on
+our product. While the goal for the sprint is to finish as much as possible, we
+do not believe that our current status satisfies this.
+
+Having said this, our product was meant partly as a proof of concept. That part
+of the project can be considered completed and we are currently working on an
+actual implementation of this concept. 
 
 \section{Project retrospective}
 \label{sec:project_retrospective}
@@ -183,7 +226,7 @@ directions at the same time.
 Table \ref{tab:sprint_summary} gives an overview of the different sprints and
 the goals for each. Notice the difference between the tasks from the product
 owner and from the course. Spending time trying to complete both of these at the
-same time made some sprints much harder than should have been and even forced us
+same time made some sprints much harder than they should have been and even forced us
 to focus on completing either one or the other. 
 
 This could have been avoided through better communication with the project
@@ -191,7 +234,7 @@ owners, trying to bend their requirements to the course. However, this is
 difficult to do when implementing proof of concept plugins. For example, we
 needed a running prototype demonstrating the applicability of the overall idea
 where, on the other hand, the software architecture is less important early in
-the process (at least in comparison to knowing whether the idea holds).)
+the process (at least in comparison to knowing whether the idea holds).
 
 \begin{table}
 	\centering
@@ -235,14 +278,14 @@ reserved for full-time jobs and we, as part of a part-time course, did not have
 this option. Instead we followed Praqma'a approach which, while based on SCRUM,
 adds some flexibility for completion percentage of sprint tasks, allowing us
 some leeway. Since we were, and still are, inexperienced with regards to SCRUM,
-this approach helped us a lot -- especially during the larger sprints.
+this approach helped us a lot.
 
 Lastly we all had trouble marking tasks as completed, as there are always more
 tests to make, more code to write and more bugs to eradicate. We got better at
 this during the course, as we learned to better specify tasks and remind each
 other when to stop working on some task. This become apparent when regarding our
 burnup graphs for the various sprints, as the amount of tasks completed actually
-increase (see appendix \ref{sec:burnup_grpahs}).
+increase (see appendix \ref{sec:burnup_graphs}).
 
 In conclusion the project and the related development has been intense at times,
 both due to the demands of our product owner and due to the split sprint goals.
@@ -265,32 +308,32 @@ last lecture of the course.
 This appendix contains all our burnup graphs, including the just
 completed one. Side by side these graphs give an idea of how and when we
 developed new strategies or tried new approaches. Please note that the first
-sprint did not include any burnup graph, as it was used for organization and the
-second sprint lacks one, as we tried a textual approach back then.
+sprint (numbered 0) did not include any burnup graph, as it was used for organization and the
+second sprint (numbered 1) lacks one, as we tried a textual approach back then.
 \begin{figure}[!ht]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/burnup_sprint_3.png}
-		\caption{Sprint 3.}
+		\caption{Sprint 2.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/burnup_sprint_4.png}
-		\caption{Sprint 4.}
+		\caption{Sprint 3.}
 	\end{subfigure}
 
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\centering
 		\includegraphics[width=\textwidth]{img/burnup_sprint_5.png}
-		\caption{Sprint 5.}
+		\caption{Sprint 4.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\centering
 		\includegraphics[width=\textwidth]{img/burnup.png}
-		\caption{Sprint 6.}
+		\caption{Sprint 5.}
 	\end{subfigure}
 	\label{Collection of burnup graphs for this Pretested Integration project.}
 \end{figure}

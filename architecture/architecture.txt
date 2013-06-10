@@ -1,0 +1,71 @@
+##TOC
+0) this text
+1) figures
+2) what is architecture
+3) our architecture
+4) our design
+
+##0
+##This text
+
+This text is a collection of thoughts regarding the description of our
+architecture and design of our plugin(s). On purpose this text has been kept
+slightly imprecise on purpose. 
+
+##1
+##Figures
+
+Previous reports contain images and figures usable for this subject.
+
+##2
+##What is architecture
+
+Software Architecture concerns itself with the abstract description of a
+software system. It can map both specific functional requirements to modules
+while also describing inter-modular communication and communication protocols.
+
+It is important to note how architecture does not consider class diagrams or
+similar UML representations, as these map directly to specific entities in the
+chosen programming language and thus comprises design.
+
+In short, architecture concerns itself with 'what' and 'where', where design
+concerns itself with 'how'.
+
+Further the architecture concerns itself with various stakeholder concerns and
+the different way to describe the system to these stakeholders.
+
+##3
+##Our architecture
+
+Our project is not a stand-alone product, but instead a plugin to an existing
+system. As such we have to consider and describe the forced architecture of our
+plugin. This includes a brief description of the surrounding Jenkins
+architecture, as this explains *where* our plugin communicates with Jenkins.
+
+Secondly, we are working on a plugin-plugin, which means we have to describe how
+the plugins communicate.
+
+These things are hard to describe without discussing the *how* of the
+Plugin-Jenkins communication, why a brief section on design is in order. Again,
+this is forced.
+
+Lastly, our stakeholders for this project consists of developers (us), customers
+(Praqma, Lars), users (Praqma, Developers(These developers are not the same
+developers as the stakeholder developers.)), Documentation producers (us),
+maintainers (Praqma, us) and potentially investors (Praqma). While many of these
+stakeholder entities are embodied by the same physical entities it is important
+to still describe the different view-ports unto the project or, at the very
+least, describing why it makes little sense.
+
+##4
+##Our design
+While the previous exam (PC:DS exam 2011) did not ask for a design section
+specifically, it makes sense discussing the design at the same time as the
+architecture. Especially for our product, discussing the 'how' is often more
+interesting than discussing the 'what' or 'where'.
+
+Discussing use-cases and their associated sequence diagrams belongs to design,
+as use-cases clearly describe the how of system interaction, both regarding the
+user-system interaction and the inter-module communication. Our system is rather
+simple, as it can be summarized in a single use-case, although having one for
+success and one for failure could be considered.

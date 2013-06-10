@@ -4,6 +4,7 @@
 2) what is architecture
 3) our architecture
 4) our design
+5) links
 
 ##0
 ##This text
@@ -69,3 +70,9 @@ as use-cases clearly describe the how of system interaction, both regarding the
 user-system interaction and the inter-module communication. Our system is rather
 simple, as it can be summarized in a single use-case, although having one for
 success and one for failure could be considered.
+
+##5
+##Links
+
+Good definition of Architecture vs Design
+http://stackoverflow.com/questions/704855/software-design-vs-software-architecture
